@@ -6,7 +6,20 @@ import streamlit as st
 import pandas as pd
 
 
-credentials_dict = st.secrets
+#credentials_dict = st.secrets
+credentials_dict = {}
+credentials_dict['type'] = st.secrets.type
+credentials_dict['project_id'] = st.secrets.project_id
+credentials_dict['private_key_id'] = st.secrets.private_key_id
+credentials_dict['private_key'] = st.secrets.private_key
+credentials_dict['client_email'] = st.secrets.client_email
+credentials_dict['client_id'] = st.secrets.client_id
+credentials_dict['auth_uri'] = st.secrets.auth_uri
+credentials_dict['token_uri'] = st.secrets.token_uri
+credentials_dict['auth_provider_x509_cert_url'] = st.secrets.auth_provider_x509_cert_url
+credentials_dict['client_x509_cert_url'] = st.secrets.client_x509_cert_url
+
+
 
 def read_data():
     #gc = gspread.service_account(filename="service_account.json")
